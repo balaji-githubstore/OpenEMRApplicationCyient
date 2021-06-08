@@ -8,7 +8,6 @@ import com.cyient.page.LoginPage;
 
 //we will delete it
 public class DemoTest {
-
 	// bala,bala123 --> 1 test case
 	// john,john123 --> 2 test case
 	// peter,peter123 --> 3 test case
