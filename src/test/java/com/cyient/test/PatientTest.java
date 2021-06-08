@@ -12,7 +12,6 @@ import com.cyient.page.LoginPage;
 import com.cyient.page.PatientFinderPage;
 
 public class PatientTest extends WebDriverWrapper {
-
 	@Test
 	public void addPatientTest() throws InterruptedException {
 		

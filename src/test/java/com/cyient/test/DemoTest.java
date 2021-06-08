@@ -25,7 +25,7 @@ public class DemoTest {
 		main[1][0] = "Bala";
 		main[1][1] = "john123";
 
-		main[2][0] = "peter";
+		main[2][0] = "Balaji";
 		main[2][1] = "peter123";
 	
 		return main;
