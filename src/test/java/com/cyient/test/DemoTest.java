@@ -22,7 +22,7 @@ public class DemoTest {
 		main[0][0] = "bala";
 		main[0][1] = "bala123";
 
-		main[1][0] = "john";
+		main[1][0] = "Bala";
 		main[1][1] = "john123";
 
 		main[2][0] = "peter";
@@ -33,7 +33,7 @@ public class DemoTest {
 
 	@Test(dataProvider = "validData")
 	public void validTest(String username, String password) {
-		System.out.println("Test Run" + username + password);
+		System.out.println("Test Run 123" + username + password);
 	}
 	
 //	  @DataProvider
