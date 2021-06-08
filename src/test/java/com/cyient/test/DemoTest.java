@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -17,17 +18,20 @@ public class DemoTest {
 		FileInputStream file = new FileInputStream("src/test/resources/testdata/OpenEMRData.xlsx");
 
 		XSSFWorkbook book = new XSSFWorkbook(file); // open
-		XSSFSheet sheet = book.getSheet("validCredentialTest");//sheet
-		XSSFRow row = sheet.getRow(2); //row
-		XSSFCell cell = row.getCell(1); //cell
-		
-		
-		String cellValue = cell.getStringCellValue(); //converting to string
-		System.out.println(cellValue);
-		
-		//rowcount
-		//cellcount
-		//will start by 4:35 PM IST
+		XSSFSheet sheet = book.getSheet("validCredentialTest");// sheet
+
+		for (int r = 0; r < 3; r++) {
+			for (int c = 0; c < 4; c++) {
+				
+				XSSFRow row = sheet.getRow(r); 
+				XSSFCell cell = row.getCell(c);
+
+				DataFormatter format = new DataFormatter();
+
+				String cellValue = format.formatCellValue(cell);
+				System.out.println(cellValue);
+			}
+		}
 
 	}
 
