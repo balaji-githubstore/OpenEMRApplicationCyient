@@ -17,17 +17,17 @@ public class DemoTest {
 		FileInputStream file = new FileInputStream("src/test/resources/testdata/OpenEMRData.xlsx");
 
 		XSSFWorkbook book = new XSSFWorkbook(file); // open
-		XSSFSheet sheet = book.getSheet("validCredentialTest");
-		XSSFRow row = sheet.getRow(2);
-		XSSFCell cell = row.getCell(1);
+		XSSFSheet sheet = book.getSheet("validCredentialTest");//sheet
+		XSSFRow row = sheet.getRow(2); //row
+		XSSFCell cell = row.getCell(1); //cell
 		
 		
-		String cellValue = cell.getStringCellValue();
+		String cellValue = cell.getStringCellValue(); //converting to string
 		System.out.println(cellValue);
 		
 		//rowcount
 		//cellcount
-		
+		//will start by 4:35 PM IST
 
 	}
 
