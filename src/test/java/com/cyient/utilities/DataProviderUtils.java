@@ -7,6 +7,13 @@ import org.testng.annotations.DataProvider;
 public class DataProviderUtils {
 	
 	@DataProvider
+	public Object[][] validCredentialExcelData() throws IOException
+	{
+		Object[][] main=ExcelUtils.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRData.xlsx", "validCredentialTest");
+		return main;
+	}
+	
+	@DataProvider
 	public Object[][] validCredentialData() {
 		Object[][] main = new Object[3][4];
 
@@ -27,7 +34,7 @@ public class DataProviderUtils {
 
 		return main;
 	}
-	//will start by 2 
+	
 	@DataProvider
 	public Object[][] invalidCredentialData()
 	{
@@ -46,12 +53,7 @@ public class DataProviderUtils {
 		return main;
 	}
 
-	@DataProvider
-	public Object[][] validCredentialExcelData() throws IOException
-	{
-		 Object[][] main= ExcelUtils.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRData.xlsx", "validCredentialTest");
-		 return main;
-	}
+	
 }
 
 

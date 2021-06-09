@@ -11,9 +11,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 
-	public static Object[][] getSheetIntoObjectArray(String filePath, String sheetname) throws IOException {
+	public static Object[][] getSheetIntoObjectArray(String excelPath, String sheetname) throws IOException {
 		
-		FileInputStream file = new FileInputStream(filePath);
+		FileInputStream file = new FileInputStream(excelPath);
 		XSSFWorkbook book = new XSSFWorkbook(file); // open
 		XSSFSheet sheet = book.getSheet(sheetname);// sheet
 		int rowCount = sheet.getPhysicalNumberOfRows();
