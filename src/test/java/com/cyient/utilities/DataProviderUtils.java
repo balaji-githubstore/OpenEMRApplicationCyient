@@ -1,8 +1,11 @@
 package com.cyient.utilities;
 
+import java.io.IOException;
+
 import org.testng.annotations.DataProvider;
 
 public class DataProviderUtils {
+	
 	@DataProvider
 	public Object[][] validCredentialData() {
 		Object[][] main = new Object[3][4];
@@ -30,7 +33,7 @@ public class DataProviderUtils {
 	{
 		Object[][] main=new Object[2][4];
 		
-		main[0][0] = "King";
+		main[0][0] = "King123457878";
 		main[0][1] = "john123";
 		main[0][2] = "Dutch";
 		main[0][3] = "Invalid username or password";
@@ -43,6 +46,12 @@ public class DataProviderUtils {
 		return main;
 	}
 
+	@DataProvider
+	public Object[][] validCredentialExcelData() throws IOException
+	{
+		 Object[][] main= ExcelUtils.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRData.xlsx", "validCredentialTest");
+		 return main;
+	}
 }
 
 

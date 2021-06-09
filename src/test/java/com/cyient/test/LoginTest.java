@@ -25,7 +25,7 @@ public class LoginTest extends WebDriverWrapper {
 		Assert.assertEquals(actualValue, expectedValue); // on not matching --abort and method will be																	// // resulted as failure
 	}
 
-	@Test(dataProvider = "validCredentialData",dataProviderClass = DataProviderUtils.class)
+	@Test(dataProvider = "validCredentialExcelData",dataProviderClass = DataProviderUtils.class)
 	public void validCredentialTest(String username, String password, String languageText, String expectedValue) {
 		LoginPage login = new LoginPage(driver);
 		login.sendUsername(username);
