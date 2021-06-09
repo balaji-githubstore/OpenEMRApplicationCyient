@@ -20,7 +20,9 @@ public class DemoTest {
 		XSSFWorkbook book = new XSSFWorkbook(file); // open
 		XSSFSheet sheet = book.getSheet("validCredentialTest");// sheet
 
-		for (int r = 0; r < 3; r++) {
+		Object[][] main=new Object[2][4];
+		
+		for (int r = 1; r < 3; r++) {
 			for (int c = 0; c < 4; c++) {
 				
 				XSSFRow row = sheet.getRow(r); 
@@ -30,8 +32,13 @@ public class DemoTest {
 
 				String cellValue = format.formatCellValue(cell);
 				System.out.println(cellValue);
+				
+				main[r-1][c]=cellValue;
 			}
 		}
+		
+		System.out.println(main[0][0]);
+		System.out.println(main[1][2]);
 
 	}
 
