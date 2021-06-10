@@ -2,7 +2,9 @@ package com.cyient.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -48,7 +50,10 @@ public class PatientTest extends WebDriverWrapper {
 		driver.findElement(By.xpath("//input[@value='Confirm Create New Patient']")).click();
 
 		driver.switchTo().defaultContent();
-		Thread.sleep(5000);
+		
+		WebDriverWait wait=new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.alertIsPresent());
+		
 		String actualAlertText = driver.switchTo().alert().getText();
 		System.out.println(actualAlertText);
 
