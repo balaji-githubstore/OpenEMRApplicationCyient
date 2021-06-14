@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import com.cyient.utilities.ScreenshotUtils;
 //bala
 public class WebDriverWrapper {
 	protected WebDriver driver;
@@ -35,6 +37,11 @@ public class WebDriverWrapper {
 
 	@AfterMethod
 	public void teardown() {
+		
+		//screenshot code
+		ScreenshotUtils.takeScreenShot(driver);
 		driver.quit();
 	}
 }
+
+//will start by 11:20 IST

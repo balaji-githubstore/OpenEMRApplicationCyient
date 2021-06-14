@@ -10,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
-
 	public static Object[][] getSheetIntoObjectArray(String excelPath, String sheetname) throws IOException {
 		
 		FileInputStream file = new FileInputStream(excelPath);
@@ -34,5 +33,4 @@ public class ExcelUtils {
 		}
 		return main;
 	}
-
 }
